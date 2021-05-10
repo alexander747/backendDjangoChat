@@ -6,9 +6,9 @@ import threading
 
 class EmailThread(threading.Thread):
 
-    def _init_(self, email):
+    def __init__(self, email):
         self.email = email
-        threading.Thread._init_(self)
+        threading.Thread.__init__(self)
 
     def run(self):
         self.email.send()
@@ -20,4 +20,3 @@ class Util:
         email = EmailMessage(
             subject=data['email_subject'], body=data['email_body'], to=[data['to_email']])
         EmailThread(email).start()
-        

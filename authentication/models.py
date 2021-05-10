@@ -53,7 +53,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
-    def _str_(self):
+    def __str__(self):
         return self.email
 
     def tokens(self):
